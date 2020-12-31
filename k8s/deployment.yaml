@@ -24,6 +24,9 @@ spec:
         - image: dylanmunyard/arm-hello-world:1.1
           imagePullPolicy: Always
           name: arm-hello-world
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80
           ports:
             - containerPort: 80
               protocol: TCP
@@ -37,7 +40,7 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 17882
+    - port: 17883
       protocol: TCP
       targetPort: 80
   selector:
