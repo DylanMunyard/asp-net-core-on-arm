@@ -1,6 +1,7 @@
 # asp-net-core-on-arm
 Getting ASP.NET Core to run on a Raspberry Pi
 
+## Working
 .NET Core supports building for multiple architectures via the `--runtime / r` flag
 on dotnet publish and dotnet restore. The ASP.NET Core runtime image
 has multiple different tags for target architectures.
