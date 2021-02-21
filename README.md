@@ -4,9 +4,12 @@ Getting ASP.NET Core to run on a Raspberry Pi
 .NET Core supports building for multiple architectures via the `--runtime / r` flag
 on dotnet publish and dotnet restore. The ASP.NET Core runtime image
 has multiple different tags for target architectures.
-[Dockerfile](Dockerfile) builds ASP.NET Core for arm32v7.  
+[Dockerfile](Dockerfile) builds ASP.NET Core for arm32v7.
 
-## Attempt 1 - Rabbit hole - Multi-architecture Docker build support
+`docker build . -t dylanmunyard/arm-hello-world:1.2` \
+`docker push dylanmunyard/arm-hello-world:1.2`
+
+## Using buildx - Rabbit hole - Multi-architecture Docker build support
 > The reason this doesn't work is that .NET Core doesn't support running 
 > within QEMU which provides Docker with support for building images for multiple platforms. 
 > The solution is to use dotnet core's runtime identifier to publish 
