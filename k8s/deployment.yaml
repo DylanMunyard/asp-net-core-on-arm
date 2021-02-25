@@ -36,7 +36,7 @@ spec:
         app: arm-hello-world
     spec:
       containers:
-        - image: dylanmunyard/arm-hello-world:1.3
+        - image: dylanmunyard/arm-hello-world:1.4
           imagePullPolicy: Always
           name: arm-hello-world
           env:

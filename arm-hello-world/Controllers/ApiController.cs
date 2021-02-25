@@ -30,6 +30,14 @@ namespace arm_hello_world.Controllers
             return new JsonResult(new {Hello = "World"});
         }
 
+        [HttpGet("host")]
+        public JsonResult Host()
+        {
+            _logger.LogInformation("/api/host called");
+
+            return new JsonResult(new {HttpContext.Request.Host});
+        }
+
         [HttpGet("db")]
         public JsonResult Db()
         {
